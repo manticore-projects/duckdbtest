@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.manticore-projects'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+
+    //Sonatype OSSRH
+    maven {
+        url = uri('https://s01.oss.sonatype.org/content/repositories/snapshots/')
+    }
+
+    maven {
+        url = uri('https://oss.sonatype.org/content/repositories/snapshots/')
+    }
+
+    maven {
+        url = uri('https://oss.sonatype.org/content/groups/public/')
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:+'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:+'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:+'
+    testImplementation 'org.duckdb:duckdb_jdbc:+'
+    testImplementation 'commons-io:commons-io:2.+'
+}
+
+
+test {
+    useJUnitPlatform()
+}
